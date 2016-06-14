@@ -21,7 +21,7 @@
     </div>
     <div class="form-group">
         <form:label path="endDate">End Date:</form:label>
-        <form:input path="endDate" type="text" required="required" placeholder="Enter  end date" class="form-control"/>
+        <form:input path="endDate" type="date" required="required" placeholder="Enter  end date" class="form-control"/>
     </div>
     <div class="form-group">
         <form:label path="startTime">Start Time:</form:label>

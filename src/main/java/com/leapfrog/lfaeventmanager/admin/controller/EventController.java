@@ -6,6 +6,7 @@
 package com.leapfrog.lfaeventmanager.admin.controller;
 
 import com.leapfrog.lfaeventmanager.entity.Event;
+import com.leapfrog.lfaeventmanager.entity.EventList;
 import com.leapfrog.lfaeventmanager.service.EventListService;
 import com.leapfrog.lfaeventmanager.service.EventService;
 import java.util.Calendar;
@@ -45,14 +46,27 @@ public class EventController {
         return new ModelAndView("event/addEvent", "command", new Event());
     }
 
+//    @RequestMapping(value = "save", method = RequestMethod.POST)
+//    public String save(@ModelAttribute(value = "event") Event eventList, @Context HttpServletRequest request) {
+//        if (request.getParameter("id") != null && !request.getParameter("id").isEmpty()) {
+//            eventList.setId(Integer.parseInt(request.getParameter("id")));
+//            eventList.setModifiedDate(new Date(Calendar.getInstance().getTimeInMillis()));
+//            eventService.update(eventList);
+//        } else {
+//            eventService.insert(eventList);
+//        }
+//        return "redirect:/event/index";
+//    }
     @RequestMapping(value = "save", method = RequestMethod.POST)
     public String save(@ModelAttribute(value = "event") Event eventList, @Context HttpServletRequest request) {
-        if (request.getParameter("id") != null && !request.getParameter("id").isEmpty()) {
-            eventList.setId(Integer.parseInt(request.getParameter("id")));
-            eventList.setModifiedDate(new Date(Calendar.getInstance().getTimeInMillis()));
-            eventService.update(eventList);
-        } else {
-            eventService.insert(eventList);
+        EventList el = eventListService.getById(Integer.parseInt(request.getParameter("id")));
+        if(el!=null){
+            Event e = new Event();
+            e.setEventName(request.getParameter("event_name"));
+            e.setPresenter(request.getParameter("presenter"));
+            e.setDescription(request.getParameter("description"));
+            e.setLocation(request.getParameter("location"));
+            eventService.insert(e);
         }
         return "redirect:/event/index";
     }

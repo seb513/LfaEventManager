@@ -88,22 +88,22 @@
 
                         </div>
                     </c:forEach>
-<!--                    <div class="col-sm-4">
-                        <div class="thumbnail">
-                            <img src="${SITE_URL}/assets/dist/img/img2.jpg" alt="New York">
-                            <p><strong>Talk Series</strong></p>
-                            <p>Wednesday 21 July 2016</p>
-                            <button class="btn" data-toggle="modal" data-target="#myModal">Book Now</button>
-                        </div>
-                    </div>
-                    <div class="col-sm-4">
-                        <div class="thumbnail">
-                            <img src="${SITE_URL}/assets/dist/img/img3.jpg" alt="San Francisco">
-                            <p><strong>Workshop</strong></p>
-                            <p>Friday 03 August 2016</p>
-                            <button class="btn" data-toggle="modal" data-target="#myModal">Book Now</button>
-                        </div>
-                    </div>-->
+                    <!--                    <div class="col-sm-4">
+                                            <div class="thumbnail">
+                                                <img src="${SITE_URL}/assets/dist/img/img2.jpg" alt="New York">
+                                                <p><strong>Talk Series</strong></p>
+                                                <p>Wednesday 21 July 2016</p>
+                                                <button class="btn" data-toggle="modal" data-target="#myModal">Book Now</button>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <div class="thumbnail">
+                                                <img src="${SITE_URL}/assets/dist/img/img3.jpg" alt="San Francisco">
+                                                <p><strong>Workshop</strong></p>
+                                                <p>Friday 03 August 2016</p>
+                                                <button class="btn" data-toggle="modal" data-target="#myModal">Book Now</button>
+                                            </div>
+                                        </div>-->
                 </div>
             </div>
 
