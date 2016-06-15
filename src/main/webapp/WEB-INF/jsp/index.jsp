@@ -83,7 +83,7 @@
                                 <img src="${SITE_URL}/assets/dist/img/img1.jpg" alt="Paris">
                                 <p><strong>${e.eventName}</strong></p>
                                 <p>${e.startDate}</p>
-                                <button class="btn" data-toggle="modal" data-target="#myModal">Book Now</button>
+                                <button class="btn" data-toggle="modal" data-target="#myModal">Details</button>
                             </div>
 
                         </div>
@@ -116,39 +116,53 @@
                     <div class="modal-content">
                         <div class="modal-header">
                             <button type="button" class="close" data-dismiss="modal">×</button>
-                            <h4> Register for Event </h4>
+                            <h4> Event Details </h4>
                         </div>
                         <div class="modal-body">
+                            <c:forEach var="e" items="${eventList}">
+                            <div>
+                                <p align="justify">${e.description}
+                                </p>
+                                <h2>Facilitator Detail:</h2>
+                                <p>${e.presenter}</p>
+                                <p>CEO/ Co-Founder at Leapfrog Academy</p>
+                                <h2>Location</h2>
+                                <p>${e.location}</p>
+                                <h2>Date/Time</h2>
+                                <p>${e.startDate} - ${e.endDate}</p>
+
+                                <a href="" title="URL">${e.url}</a>
+                            </div><br>
+                            </c:forEach>
+
+                            <div class="modal-header">
+
+                                <h4> Reserve your seat </h4>
+                            </div>
+
                             <form role="form">
-                                <!-- <div class="form-group">
-                                  <label for="psw"><span class="glyphicon glyphicon-shopping-cart"></span> Seats Available : 40 persons</label>
-                                </div> -->
-                                <h2> Seats Available : 40 persons </h2>
+
+                                <p> Seats Available : 40 persons </p>
                                 <div class="form-inline">
                                     <input type="text" class="form-control" id="usrname" placeholder="First Name">&nbsp;
                                     <input type="text" class="form-control" id="usrname" placeholder="Last Name">
                                 </div>&nbsp;
-                                <div class="form-group">
-                                    <input type="text" class="form-control" id="usrname" placeholder="Enter Address">
-                                </div> 
-                                <div class="form-group">
+                                <div class="form-inline">
                                     <input type="text" class="form-control" id="usrname" placeholder="Enter Email">
-                                </div>
-                                <div class="form-group">
                                     <input type="text" class="form-control" id="usrname" placeholder="Enter Phone">
                                 </div>
                                 <div class="form-group">
                                     <input type="text" class="form-control" id="usrname" placeholder="Enter College/Organisation">
                                 </div>
-                                <div class="form-group">
-                                    <label>Type:</label>
-                                    <input type="radio" name="person" value="person"> Student
-                                    <input type="radio" name="person" value="person"> Visitor
-                                </div>
+                                <!--                                <div class="form-group">
+                                                                    <label>Type:</label>
+                                                                    <input type="radio" name="person" value="person"> Student
+                                                                    <input type="radio" name="person" value="person"> Visitor
+                                                                </div>-->
                                 <div align="center">
-                                    <button type="submit" class="btn"> Book My Seat <span class="glyphicon glyphicon-send"></span>
+                                    <button type="submit" class="btn"> Book Now <span class="glyphicon glyphicon-send"></span>
                                     </button>
-                                    <button type="submit" class="btn btn-danger btn-default pull-left" data-dismiss="modal">
+                                    <button type="submit" class="btn btn-danger btn-default pull-right" data-dismiss="modal">
                                         <span class="glyphicon glyphicon-remove"></span> Cancel
                                     </button>
                                 </div>  

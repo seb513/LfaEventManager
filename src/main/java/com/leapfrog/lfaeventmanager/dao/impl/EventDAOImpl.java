@@ -75,7 +75,7 @@ public class EventDAOImpl implements EventDAO {
     public List<Event> findAll() {
         session = sessionFactory.openSession();
         trans = session.beginTransaction();
-        List<Event> eventLists = session.getNamedQuery("Event.findAll").setMaxResults(3).list();
+        List<Event> eventLists = session.getNamedQuery("Event.findByStatus").setMaxResults(3).list();
         trans.commit();
         session.close();
         return eventLists;

@@ -36,6 +36,13 @@ body {
       display: none; /* Hide the carousel text when the screen is less than 600 pixels wide */
     }
   }
+  #myModal p{
+      color: #000;
+      font-size: 16px;
+      font-style: normal;
+      font-family: serif;
+  }
+    
   .bg-1 {
       background: #2d2d30;
       color: #bdbdbd;

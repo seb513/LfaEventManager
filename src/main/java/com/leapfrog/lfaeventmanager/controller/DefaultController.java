@@ -28,8 +28,8 @@ public class DefaultController {
     @RequestMapping(value = "/", method = RequestMethod.GET)
     public ModelAndView eventList() {
         ModelAndView mv = new ModelAndView("index");
-        List<Event> eventLists = eventService.findAll();
-        mv.addObject("eventLists", eventLists);
+       // List<Event> eventLists = eventService.findAll();
+        mv.addObject("eventLists", eventService.findAll());
         return mv;
     }
 }

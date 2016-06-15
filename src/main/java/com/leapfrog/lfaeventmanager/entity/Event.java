@@ -49,7 +49,7 @@ import javax.xml.bind.annotation.XmlTransient;
     @NamedQuery(name = "Event.findByUrl", query = "SELECT e FROM Event e WHERE e.url = :url"),
     @NamedQuery(name = "Event.findByAddedDate", query = "SELECT e FROM Event e WHERE e.addedDate = :addedDate"),
     @NamedQuery(name = "Event.findByModifiedDate", query = "SELECT e FROM Event e WHERE e.modifiedDate = :modifiedDate"),
-    @NamedQuery(name = "Event.findByStatus", query = "SELECT e FROM Event e WHERE e.status = :status")})
+    @NamedQuery(name = "Event.findByStatus", query = "SELECT e FROM Event e WHERE e.status = 1")})
 public class Event implements Serializable {
 
     private static final long serialVersionUID = 1L;
