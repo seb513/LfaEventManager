@@ -9,7 +9,7 @@
     </div>
     <div class="form-group">
         <form:label path="presenter">Presenter:</form:label>
-        <form:input path="presenter" type="date" required="required" placeholder="Enter presenter name" class="form-control"/>
+        <form:input path="presenter" type="text" required="required" placeholder="Enter presenter name" class="form-control"/>
     </div>
     <div class="form-group">
         <form:label path="description">Description:</form:label>

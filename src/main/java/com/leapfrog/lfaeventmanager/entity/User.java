@@ -54,12 +54,10 @@ public class User implements Serializable {
     @Size(min = 1, max = 100)
     @Column(nullable = false, length = 100)
     private String password;
-    @Basic(optional = false)
-    @NotNull
-    @Column(name = "added_date", nullable = false)
+    @Column(name = "added_date", insertable = false)
     @Temporal(TemporalType.TIMESTAMP)
     private Date addedDate;
-    @Column(name = "modified_date")
+    @Column(name = "modified_date",nullable = true)
     @Temporal(TemporalType.TIMESTAMP)
     private Date modifiedDate;
     @Basic(optional = false)
@@ -74,11 +72,10 @@ public class User implements Serializable {
         this.id = id;
     }
 
-    public User(Integer id, String username, String password, Date addedDate, boolean status) {
+    public User(Integer id, String username, String password, boolean status) {
         this.id = id;
         this.username = username;
         this.password = password;
-        this.addedDate = addedDate;
         this.status = status;
     }
 

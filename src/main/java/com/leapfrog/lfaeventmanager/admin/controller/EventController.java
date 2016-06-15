@@ -9,6 +9,8 @@ import com.leapfrog.lfaeventmanager.entity.Event;
 import com.leapfrog.lfaeventmanager.entity.EventList;
 import com.leapfrog.lfaeventmanager.service.EventListService;
 import com.leapfrog.lfaeventmanager.service.EventService;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 import javax.servlet.http.HttpServletRequest;
@@ -30,12 +32,12 @@ public class EventController {
 
     @Autowired
     private EventService eventService;
-    
+
     @Autowired
     private EventListService eventListService;
 
     @RequestMapping(value = "index", method = RequestMethod.GET)
-    public ModelAndView index() {
+    public ModelAndView index(@ModelAttribute(value = "event") EventList eventList, @Context HttpServletRequest request) {
         ModelAndView mv = new ModelAndView("event/index");
         mv.addObject("eventList", eventService.getAll());
         return mv;
@@ -58,14 +60,18 @@ public class EventController {
 //        return "redirect:/event/index";
 //    }
     @RequestMapping(value = "save", method = RequestMethod.POST)
-    public String save(@ModelAttribute(value = "event") Event eventList, @Context HttpServletRequest request) {
+    public String save(@ModelAttribute(value = "event") Event eventList, @Context HttpServletRequest request) throws ParseException {
         EventList el = eventListService.getById(Integer.parseInt(request.getParameter("id")));
-        if(el!=null){
+        if (el != null) {
             Event e = new Event();
             e.setEventName(request.getParameter("event_name"));
             e.setPresenter(request.getParameter("presenter"));
             e.setDescription(request.getParameter("description"));
             e.setLocation(request.getParameter("location"));
+            e.setUrl(request.getParameter("url"));
+            String startDateStr = request.getParameter("start_date");
+            SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
+            Date startDate = sdf.parse(startDateStr);
             eventService.insert(e);
         }
         return "redirect:/event/index";
@@ -89,4 +95,4 @@ public class EventController {
         eventService.delete(id);
         return "redirect:/event/index";
     }
-    }
+}

@@ -14,7 +14,6 @@
             <tr>
                 <th>Event Name</th>
                 <th>Presenter</th>
-                <!--                <th>Description</th>-->
                 <th>Start Date</th>
                 <th>End Date</th>
                 <th>Start Time</th>
@@ -23,16 +22,17 @@
                 <th>Url</th>
                 <th>Added Date</th>
                 <th>Modified Date</th>
+                <th>Event Name</th>
                 <th>Status</th>
                 <th>Action</th>
             </tr>
         </thead>
         <c:forEach var="m" items="${eventList}">
             <tbody>
+               
                 <tr>
                     <td>${m.eventName}</td>
                     <td>${m.presenter}</td>
-<!--                    <td>${m.description}</td>-->
                     <td>${m.startDate}</td>
                     <td>${m.endDate}</td>
                     <td>${m.startTime}</td>
@@ -41,7 +41,7 @@
                     <td><a href="https://www.facebook.com/leapfrogacademy/?fref=ts" target="_blank">${m.url}</a></td>
                     <td>${m.addedDate}</td>
                     <td>${m.modifiedDate}</td>
-
+                    <td>${m.elId.elName}</td>
                     <td>
                         <c:choose>
                             <c:when test="${m.status}">
@@ -61,6 +61,7 @@
                         </a>
                     </td>
                 </tr>
+                
             </tbody>
         </c:forEach>
     </table>

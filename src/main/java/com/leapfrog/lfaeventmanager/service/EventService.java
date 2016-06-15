@@ -6,11 +6,12 @@
 package com.leapfrog.lfaeventmanager.service;
 
 import com.leapfrog.lfaeventmanager.entity.Event;
+import java.util.List;
 
 /**
  *
  * @author root
  */
 public interface EventService extends GenericService<Event>{
-    
+    List<Event> findAll();
 }

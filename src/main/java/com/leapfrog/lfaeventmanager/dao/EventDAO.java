@@ -6,11 +6,12 @@
 package com.leapfrog.lfaeventmanager.dao;
 
 import com.leapfrog.lfaeventmanager.entity.Event;
+import java.util.List;
 
 /**
  *
  * @author User
  */
 public interface EventDAO extends GenericDAO<Event>{
-    
+    List<Event> findAll();
 }

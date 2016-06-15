@@ -55,37 +55,66 @@ public class Event implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id")
+    @Basic(optional = false)
+    @Column(nullable = false)
     private Integer id;
-    @Column(name = "event_name")
+    @Basic(optional = false)
+    @NotNull
+    @Size(min = 1, max = 100)
+    @Column(name = "event_name", nullable = false, length = 100)
     private String eventName;
-    @Column(name = "presenter")
+    @Basic(optional = false)
+    @NotNull
+    @Size(min = 1, max = 100)
+    @Column(nullable = false, length = 100)
     private String presenter;
-    @Column(name = "description")
+    @Basic(optional = false)
+    @NotNull
+    @Lob
+    @Size(min = 1, max = 65535)
+    @Column(nullable = false, length = 65535)
     private String description;
+    @Basic(optional = false)
+    @NotNull
     @Column(name = "start_date", nullable = false)
     @Temporal(TemporalType.DATE)
     private Date startDate;
+    @Basic(optional = false)
+    @NotNull
     @Column(name = "end_date", nullable = false)
     @Temporal(TemporalType.DATE)
     private Date endDate;
+    @Basic(optional = false)
+    @NotNull
     @Column(name = "start_time", nullable = false)
     @Temporal(TemporalType.TIME)
     private Date startTime;
+    @Basic(optional = false)
+    @NotNull
     @Column(name = "end_time", nullable = false)
     @Temporal(TemporalType.TIME)
     private Date endTime;
-    @Column(name = "location")
+    @Basic(optional = false)
+    @NotNull
+    @Size(min = 1, max = 100)
+    @Column(nullable = false, length = 100)
     private String location;
-    @Column(name = "url")
+    @Basic(optional = false)
+    @NotNull
+    @Size(min = 1, max = 255)
+    @Column(nullable = false, length = 255)
     private String url;
-    @Column(name = "added_date", insertable = false)
+    @Basic(optional = false)
+    @NotNull
+    @Column(name = "added_date", nullable = false)
     @Temporal(TemporalType.TIMESTAMP)
     private Date addedDate;
-    @Column(name = "modified_date",nullable = true)
+    @Column(name = "modified_date")
     @Temporal(TemporalType.TIMESTAMP)
     private Date modifiedDate;
-    @Column(name = "status")
+    @Basic(optional = false)
+    @NotNull
+    @Column(nullable = false)
     private boolean status;
     @JoinColumn(name = "el_id", referencedColumnName = "id", nullable = false)
     @ManyToOne(optional = false)

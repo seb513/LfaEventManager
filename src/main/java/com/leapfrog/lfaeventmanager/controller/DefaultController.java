@@ -5,7 +5,9 @@
  */
 package com.leapfrog.lfaeventmanager.controller;
 
-import com.leapfrog.lfaeventmanager.service.EventListService;
+import com.leapfrog.lfaeventmanager.entity.Event;
+import com.leapfrog.lfaeventmanager.service.EventService;
+import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -19,19 +21,15 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 @RequestMapping(value = "/")
 public class DefaultController {
+
     @Autowired
-    private EventListService eventListService;
-    
-//    @RequestMapping(value = "/",method = RequestMethod.GET)
-//    public String index(){
-//        return "index";
-//    }
-   
-    
+    private EventService eventService;
+
     @RequestMapping(value = "/", method = RequestMethod.GET)
-    public ModelAndView eventList(){
+    public ModelAndView eventList() {
         ModelAndView mv = new ModelAndView("index");
-        mv.addObject("eventLists", eventListService.getAll());
+        List<Event> eventLists = eventService.findAll();
+        mv.addObject("eventLists", eventLists);
         return mv;
     }
 }

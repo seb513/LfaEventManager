@@ -4,20 +4,12 @@
 <form:form method="post" action="${SITE_URL}/user/save" modelAttribute="user">
     <div class="container">
         <div class="form-group">
-            <form:label path="name">Name:</form:label>
-            <form:input path="name" type="text" required="required" placeholder="Enter user name" class="form-control"/>
+            <form:label path="username">User Name:</form:label>
+            <form:input path="username" type="text" required="required" placeholder="Enter user name" class="form-control"/>
         </div>
         <div class="form-group">
-            <form:label path="description">Description:</form:label>
-            <form:textarea path="description" required="required" class="form-control" rows="3"/>
-        </div>
-        <div class="form-group">
-            <form:label path="presenter">Presenter:</form:label>
-            <form:input path="presenter" type="text" required="required" placeholder="Enter presenter name" class="form-control"/>
-        </div>
-        <div class="form-group">
-            <form:label path="location">Location:</form:label>
-            <form:input path="location" type="text" required="required" placeholder="Enter the location" class="form-control"/>
+            <form:label path="password">Password:</form:label>
+            <form:input path="password" type="password" required="required" placeholder="Enter password" class="form-control"/>
         </div>
         <div class="form-group">
             <form:label path="status">Status:</form:label>

@@ -9,8 +9,10 @@ import com.leapfrog.lfaeventmanager.entity.Booking;
 import com.leapfrog.lfaeventmanager.service.BookingService;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 import javax.ws.rs.core.Context;
+import org.hibernate.Session;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -28,6 +30,7 @@ public class BookingController {
 
     @Autowired
     private BookingService bookingService;
+    private Session session;
 
     @RequestMapping(value = "index", method = RequestMethod.GET)
     public ModelAndView index() {

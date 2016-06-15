@@ -47,24 +47,49 @@ public class Booking implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id")
+    @Basic(optional = false)
+    @Column(nullable = false)
     private Integer id;
-    @Column(name = "first_name")
+    @Basic(optional = false)
+    @NotNull
+    @Size(min = 1, max = 100)
+    @Column(name = "first_name", nullable = false, length = 100)
     private String firstName;
-    @Column(name = "last_name")
+    @Basic(optional = false)
+    @NotNull
+    @Size(min = 1, max = 100)
+    @Column(name = "last_name", nullable = false, length = 100)
     private String lastName;
-    @Column(name = "phone")
+    // @Pattern(regexp="^\\(?(\\d{3})\\)?[- ]?(\\d{3})[- ]?(\\d{4})$", message="Invalid phone/fax format, should be as xxx-xxx-xxxx")//if the field contains phone or fax number consider using this annotation to enforce field validation
+    @Basic(optional = false)
+    @NotNull
+    @Size(min = 1, max = 100)
+    @Column(nullable = false, length = 100)
     private String phone;
-    @Column(name = "email")
+    // @Pattern(regexp="[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?", message="Invalid email")//if the field contains email address consider using this annotation to enforce field validation
+    @Basic(optional = false)
+    @NotNull
+    @Size(min = 1, max = 100)
+    @Column(nullable = false, length = 100)
     private String email;
-    @Column(name = "address")
+    @Basic(optional = false)
+    @NotNull
+    @Size(min = 1, max = 100)
+    @Column(nullable = false, length = 100)
     private String address;
-    @Column(name = "college")
+    @Basic(optional = false)
+    @NotNull
+    @Size(min = 1, max = 100)
+    @Column(nullable = false, length = 100)
     private String college;
-    @Column(name = "booking_date", insertable = false)
+    @Basic(optional = false)
+    @NotNull
+    @Column(name = "booking_date", nullable = false)
     @Temporal(TemporalType.TIMESTAMP)
     private Date bookingDate;
-    @Column(name = "status")
+    @Basic(optional = false)
+    @NotNull
+    @Column(nullable = false)
     private boolean status;
     @JoinColumn(name = "person_id", referencedColumnName = "id", nullable = false)
     @ManyToOne(optional = false)
@@ -80,7 +105,7 @@ public class Booking implements Serializable {
         this.id = id;
     }
 
-    public Booking(Integer id, String firstName, String lastName, String phone, String email, String address, String college, boolean status) {
+    public Booking(Integer id, String firstName, String lastName, String phone, String email, String address, String college, Date bookingDate, boolean status) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
@@ -88,6 +113,7 @@ public class Booking implements Serializable {
         this.email = email;
         this.address = address;
         this.college = college;
+        this.bookingDate = bookingDate;
         this.status = status;
     }
 

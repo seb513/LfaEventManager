@@ -47,4 +47,9 @@ public class EventServiceImpl implements EventService {
         return eventDAO.getById(id);
     }
 
+    @Override
+    public List<Event> findAll() {
+        return eventDAO.findAll();
+    }
+
 }

@@ -81,8 +81,8 @@
                             <div class="thumbnail">
 
                                 <img src="${SITE_URL}/assets/dist/img/img1.jpg" alt="Paris">
-                                <p><strong>${e.elName}</strong></p>
-                                <p>Tuesday 07 June 2016</p>
+                                <p><strong>${e.eventName}</strong></p>
+                                <p>${e.startDate}</p>
                                 <button class="btn" data-toggle="modal" data-target="#myModal">Book Now</button>
                             </div>
 

@@ -17,6 +17,8 @@
                 <th>Email</th>
                 <th>Address</th>
                 <th>College</th>
+                <th>Type</th>
+                <th>Event Name</th>
                 <th>Booking Date</th>
                 <th>Status</th>
                 <th>Action</th>
@@ -30,6 +32,8 @@
                     <td>${m.email}</td>
                     <td>${m.address}</td>
                     <td>${m.college}</td>
+                    <td>${m.personId.personName}</td>
+                    <td>${m.eventId.eventName}</td>
                     <td>${m.bookingDate}</td>
                     <td>
                         <c:choose>

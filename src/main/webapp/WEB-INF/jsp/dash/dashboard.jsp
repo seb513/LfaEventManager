@@ -5,7 +5,7 @@
         <!-- small box -->
         <div class="small-box bg-aqua">
             <div class="inner">
-                <h3>150</h3>
+                <h3>${eventList}</h3>
 
                 <p>Total Events</p>
             </div>
@@ -20,7 +20,7 @@
         <!-- small box -->
         <div class="small-box bg-green">
             <div class="inner">
-                <h3>53</h3>
+                <h3>${eventLists}</h3>
 <!--<sup style="font-size: 20px">%</sup>-->
                 <p>Event Lists</p>
             </div>
