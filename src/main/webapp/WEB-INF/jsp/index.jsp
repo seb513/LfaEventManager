@@ -142,18 +142,21 @@
 
                             <form role="form">
 
-                                <p> Seats Available : 40 persons </p>
-                                <div class="form-inline">
-                                    <input type="text" class="form-control" id="usrname" placeholder="First Name">&nbsp;
-                                    <input type="text" class="form-control" id="usrname" placeholder="Last Name">
-                                </div>&nbsp;
-                                <div class="form-inline">
-                                    <input type="text" class="form-control" id="usrname" placeholder="Enter Email">&nbsp;
-                                    <input type="text" class="form-control" id="usrname" placeholder="Enter Phone">
-                                </div>&nbsp;
-                                <div class="form-group">
-                                    <input type="text" class="form-control" id="usrname" placeholder="Enter College/Organisation">
+                                <div class="container col-md-12">
+                                    <p> Seats Available : 40 persons </p>
+                                    <div class="form-inline">
+                                        <input type="text" class="form-control" id="usrname" placeholder="First Name">&emsp;
+                                        <input type="text" class="form-control" id="usrname" placeholder="Last Name">
+                                    </div>&nbsp;
+                                    <div class="form-inline">
+                                        <input type="text" class="form-control" id="usrname" placeholder="Enter Email">&emsp;
+                                        <input type="text" class="form-control" id="usrname" placeholder="Enter Phone">
+                                    </div>&nbsp;
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" id="usrname" placeholder="Enter College/Organisation">
+                                    </div>
                                 </div>
+
                                 <!--                                <div class="form-group">
                                                                     <label>Type:</label>
                                                                     <input type="radio" name="person" value="person"> Student
