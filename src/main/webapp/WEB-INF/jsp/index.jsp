@@ -148,9 +148,9 @@
                                     <input type="text" class="form-control" id="usrname" placeholder="Last Name">
                                 </div>&nbsp;
                                 <div class="form-inline">
-                                    <input type="text" class="form-control" id="usrname" placeholder="Enter Email">
+                                    <input type="text" class="form-control" id="usrname" placeholder="Enter Email">&nbsp;
                                     <input type="text" class="form-control" id="usrname" placeholder="Enter Phone">
-                                </div>
+                                </div>&nbsp;
                                 <div class="form-group">
                                     <input type="text" class="form-control" id="usrname" placeholder="Enter College/Organisation">
                                 </div>
