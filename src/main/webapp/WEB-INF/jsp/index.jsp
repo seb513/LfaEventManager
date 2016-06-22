@@ -120,19 +120,19 @@
                         </div>
                         <div class="modal-body">
                             <c:forEach var="e" items="${eventList}">
-                            <div>
-                                <p align="justify">${e.description}
-                                </p>
-                                <h2>Facilitator Detail:</h2>
-                                <p>${e.presenter}</p>
-                                <p>CEO/ Co-Founder at Leapfrog Academy</p>
-                                <h2>Location</h2>
-                                <p>${e.location}</p>
-                                <h2>Date/Time</h2>
-                                <p>${e.startDate} - ${e.endDate}</p>
+                                <div>
+                                    <p align="justify">${e.description}
+                                    </p>
+                                    <h2>Facilitator Detail:</h2>
+                                    <p>${e.presenter}</p>
+                                    <p>CEO/ Co-Founder at Leapfrog Academy</p>
+                                    <h2>Location</h2>
+                                    <p>${e.location}</p>
+                                    <h2>Date/Time</h2>
+                                    <p>${e.startDate} - ${e.endDate}</p>
 
-                                <a href="" title="URL">${e.url}</a>
-                            </div><br>
+                                    <a href="" title="URL">${e.url}</a>
+                                </div><br>
                             </c:forEach>
 
                             <div class="modal-header">

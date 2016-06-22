@@ -3,9 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.leapfrog.lfaeventmanager.controller;
+package com.leapfrog.lfaeventmanager.admin.controller;
 
-import com.leapfrog.lfaeventmanager.service.EventService;
+import com.leapfrog.lfaeventmanager.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -17,17 +17,16 @@ import org.springframework.web.servlet.ModelAndView;
  * @author User
  */
 @Controller
-@RequestMapping(value = "/")
-public class DefaultController {
+@RequestMapping(value = "login")
+public class LoginController {
 
     @Autowired
-    private EventService eventService;
+    private UserService userService;
 
-    @RequestMapping(value = "/", method = RequestMethod.GET)
-    public ModelAndView eventList() {
-        ModelAndView mv = new ModelAndView("index");
-       // List<Event> eventLists = eventService.findAll();
-        mv.addObject("eventLists", eventService.findAll());
+    @RequestMapping(value = "login", method = RequestMethod.GET)
+    public ModelAndView displayLogin() {
+        ModelAndView mv = new ModelAndView("login/login");
+        mv.addObject("userList", userService.getAll());
         return mv;
     }
 }
